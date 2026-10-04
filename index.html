@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delaney Dixon | Business transformation</title>
+<meta name="description" content="Delaney Dixon turns messy enterprise problems into better ways of working, and increasingly into better products, operating models and AI-enabled solutions.">
+<meta property="og:title" content="Delaney Dixon | Business transformation">
+<meta property="og:description" content="Rigor for the things the world calls too small.">
+<!-- TODO: add <meta property="og:image" content="images/share-card.png"> once you have a share image -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%232C1320'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..600&family=Instrument+Serif:ital@0;1&display=swap">
+
+<style>
+/* ==========================================================================
+   Tokens
+   Ground, ink and the four accents are the only colors on the page.
+   Set --ph-bg to transparent to hide the placeholder highlights.
+   ========================================================================== */
+:root{
+  --ground:#FDFCCB;
+  --ink:#2C1320;
+  --sky:#B5E2FA;
+  --peach:#F7A072;
+  --sage:#8FB398;
+  --lemon:#F8F991;
+  --paper:#FFFEF6;
+  --ph-bg:#B5E2FA;
+  --gutter:clamp(16px,5vw,64px);
+  --max:1200px;
+  --serif:'Instrument Serif','Cormorant Garamond',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;overflow-x:clip}
+img,svg{max-width:100%}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--ink);outline-offset:4px;border-radius:4px}
+ul{margin:0;padding:0;list-style:none}
+h1,h2,h3,h4,p{margin:0}
+
+.serif{font-family:var(--serif);font-weight:400}
+.cap{font-family:var(--sans);font-size:12px;line-height:1.25;font-weight:500;text-transform:uppercase;letter-spacing:0}
+.ph{background:var(--ph-bg);padding:0 .2em;border-radius:4px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.lnk{text-decoration:none}
+.lnk:hover{text-decoration:underline wavy;text-decoration-thickness:2px;text-underline-offset:6px}
+.skip{position:absolute;left:16px;top:-80px;z-index:50;background:var(--ink);color:var(--ground);padding:10px 16px;border-radius:8px}
+.skip:focus{top:16px}
+
+/* dot caption: the small black dot + tiny caps label used across the page */
+.anno{display:flex;align-items:flex-start;gap:10px}
+.anno::before{content:"";flex:0 0 14px;height:14px;margin-top:-1px;border-radius:50%;background:var(--ink)}
+.anno > div,.anno > span{min-width:0}
+
+/* paper scrap with a perforated top edge */
+.paper{position:relative;background:linear-gradient(170deg,#F7F5EE,#E8E5DB);box-shadow:0 26px 44px -26px rgba(44,19,32,.55)}
+.paper::before{content:"";position:absolute;left:0;right:0;top:12px;height:14px;background:radial-gradient(circle,var(--ground) 5px,rgba(253,252,203,0) 5.6px) 0 0/30px 14px repeat-x}
+
+/* polaroid */
+.pola{background:var(--paper);padding:14px 14px 52px;box-shadow:0 22px 36px -22px rgba(44,19,32,.6)}
+.slot{display:flex;align-items:center;justify-content:center;text-align:center;padding:16px}
+
+.section{padding:40px var(--gutter) 120px}
+.wrap{max-width:var(--max);margin:0 auto}
+.stack{display:flex;flex-direction:column}
+.h2{font-size:clamp(52px,8vw,112px);line-height:.88;letter-spacing:-.05em}
+.lede{max-width:17em;font-size:clamp(22px,2.4vw,30px);line-height:1.05;letter-spacing:-.02em}
+.head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 48px}
+
+/* ==========================================================================
+   Masthead
+   ========================================================================== */
+.mast{display:grid;grid-template-columns:1fr auto 1fr;align-items:start;gap:16px 24px}
+.mast-name{font-size:clamp(60px,12.5vw,184px);line-height:.88;letter-spacing:-.055em;white-space:nowrap}
+.mast-right{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.menu-label{font-size:30px;line-height:1;letter-spacing:-.02em}
+.menu-list{margin-top:14px;font-size:28px;line-height:1;letter-spacing:-.03em}
+.menu-list a,.contact-link{display:inline-flex;align-items:center;min-height:44px}
+.contact-link{font-size:30px;line-height:1;letter-spacing:-.02em}
+.tagline{margin:0 auto;max-width:15em;text-align:center;font-size:clamp(32px,4.6vw,64px);line-height:.98;letter-spacing:-.035em;text-wrap:balance}
+
+/* ==========================================================================
+   Hero collage: a 12-column grid so nothing can land on top of anything else.
+   The ink thread runs behind everything; captions sit on a ground-colored chip.
+   ========================================================================== */
+.collage{position:relative;overflow-x:clip;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:28px 24px;align-items:start;padding-block:24px}
+.collage > *:not(.thread){position:relative;z-index:1}
+.thread{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.note{grid-column:1 / span 4;grid-row:1 / span 2;padding:58px 30px 34px;display:flex;flex-direction:column;gap:18px;transform:rotate(-4deg)}
+.note-hi{font-size:40px;line-height:1;letter-spacing:-.03em}
+.note-body{font-size:25px;line-height:1.08;letter-spacing:-.02em}
+.collage .pola{grid-column:5 / span 4;grid-row:1 / span 2;margin:28px 0 0 12px;transform:rotate(3deg)}
+.flower{grid-column:9 / span 4;grid-row:1;justify-self:end;width:min(100%,300px);transform:rotate(8deg)}
+.cap-chip{background:rgba(253,252,203,.92);padding:6px 10px;border-radius:6px}
+.cap-photo{grid-column:9 / span 4;grid-row:2;align-self:start}
+.cap-years{grid-column:1 / span 4;grid-row:3;align-self:start}
+.cap-rigor{grid-column:9 / span 4;grid-row:3;align-self:start}
+
+@media (max-width:880px){
+  .mast{grid-template-columns:1fr 1fr}
+  .mast-right{order:1}
+  .mast-name{order:2;grid-column:1 / -1;text-align:center}
+  .collage{display:flex;flex-direction:column;align-items:center;gap:28px}
+  .collage > *:not(.thread){width:100%;max-width:380px}
+  .thread{display:none}
+  .note{order:1;transform:rotate(-2deg)}
+  .collage .pola{order:2;margin:0;transform:rotate(2deg)}
+  .cap-photo{order:3}
+  .flower{order:4;width:60%;justify-self:auto}
+  .cap-years{order:5}
+  .cap-rigor{order:6}
+}
+
+/* ==========================================================================
+   Selected work
+   ========================================================================== */
+.posters{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:56px 32px}
+.work{flex:1 1 300px;max-width:380px;min-width:0;display:flex;flex-direction:column;gap:18px}
+.work:nth-child(2){margin-top:64px}
+.work:nth-child(3){margin-top:24px}
+.poster{position:relative;aspect-ratio:3 / 4;display:flex;align-items:flex-end;justify-content:center;padding:16px;overflow:hidden;box-shadow:0 24px 40px -24px rgba(44,19,32,.6)}
+.poster svg{position:absolute;left:8%;top:6%;width:84%;height:auto}
+.poster .cap{position:relative;background:var(--paper);padding:8px 12px;text-align:center}
+.work-body{display:flex;flex-direction:column;gap:12px}
+.work-title{font-size:38px;line-height:.98;letter-spacing:-.03em;text-wrap:balance}
+.work-text{font-size:16px;line-height:1.5}
+.work-outcome{font-size:16px;font-weight:600}
+.work-link{align-self:flex-start;display:inline-flex;align-items:center;min-height:44px;font-size:24px;letter-spacing:-.02em;text-decoration:underline wavy;text-decoration-thickness:2px;text-underline-offset:6px}
+
+/* ==========================================================================
+   Experience
+   ========================================================================== */
+.xp{display:flex;flex-wrap:wrap;align-items:flex-start;gap:56px 64px}
+.sheet{flex:2 1 560px;min-width:0;padding:64px clamp(22px,4vw,52px) 48px;transform:rotate(-.8deg);display:flex;flex-direction:column;gap:36px}
+.role{display:flex;flex-direction:column;gap:14px}
+.role-org{font-size:clamp(38px,4.6vw,60px);line-height:.95;letter-spacing:-.04em}
+.role-title{font-size:26px;line-height:1;letter-spacing:-.02em}
+.role-sub{font-size:34px;line-height:.98;letter-spacing:-.03em}
+.role p,.role li{font-size:16px;line-height:1.5}
+.role ul{padding-left:20px;display:flex;flex-direction:column;gap:9px;max-width:42em;list-style:disc;margin-top:8px}
+.role p{max-width:42em}
+.aside{flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:48px}
+.stat{display:flex;flex-direction:column;gap:6px}
+.stat-art{position:relative;width:250px;max-width:100%;height:150px;display:flex;align-items:center;justify-content:center}
+.stat-art svg{position:absolute;inset:0;width:100%;height:100%}
+.stat-num{position:relative;font-size:104px;line-height:1;letter-spacing:-.05em}
+.stat .cap{max-width:16em}
+.study-h{font-size:44px;line-height:.95;letter-spacing:-.04em}
+.study{display:flex;flex-direction:column;gap:14px;margin-top:18px}
+.study-name{font-size:25px;line-height:1.02;letter-spacing:-.02em}
+
+/* ==========================================================================
+   How I work
+   ========================================================================== */
+.how{display:flex;flex-wrap:wrap;align-items:center;gap:48px 64px}
+.how-art{flex:1 1 320px;min-width:0;max-width:460px;margin:0 auto}
+.how-art svg{width:100%;height:auto;display:block;transform:rotate(-6deg)}
+.how-list{flex:1 1 460px;min-width:0;display:flex;flex-direction:column;gap:22px}
+.how-list .anno{gap:16px}
+.how-verb{font-size:50px;line-height:.95;letter-spacing:-.04em}
+
+/* ==========================================================================
+   About
+   ========================================================================== */
+.about{display:flex;flex-wrap:wrap;align-items:flex-start;gap:56px 72px}
+.about .pola{flex:0 1 380px;min-width:0;width:100%;max-width:380px;transform:rotate(-3deg)}
+.about-copy{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:24px}
+.about-lead{max-width:20em;font-size:clamp(30px,3.4vw,46px);line-height:1.02;letter-spacing:-.03em;text-wrap:balance}
+.about-copy p.body{max-width:36em;font-size:17px}
+.facts{display:flex;flex-direction:column;gap:14px;padding-top:12px}
+
+/* ==========================================================================
+   Contact
+   ========================================================================== */
+.contact-h{max-width:11em;font-size:clamp(52px,8vw,112px);line-height:.9;letter-spacing:-.05em;text-wrap:balance}
+.contact-list{display:flex;flex-wrap:wrap;gap:36px 72px}
+.contact-list .anno{gap:16px}
+.contact-label{font-size:clamp(34px,4vw,52px);line-height:.95;letter-spacing:-.04em}
+.contact-val{overflow-wrap:anywhere}
+.thread-band{margin-top:72px;height:140px}
+.thread-band svg{display:block;width:100%;height:100%}
+
+footer{padding:24px var(--gutter);border-top:2px solid var(--ink)}
+.foot{max-width:var(--max);margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 24px}
+.foot a{display:inline-flex;align-items:center;min-height:44px}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#work">Skip to content</a>
+
+<!-- Shared hand-inked edge. Every doodle below uses filter="url(#rough)".
+     When you swap in your own Procreate drawings you can delete this block. -->
+<svg aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="rough" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="n"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="9" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+    </filter>
+  </defs>
+</svg>
+
+<header id="top" style="overflow-x:clip;padding:28px var(--gutter) 96px">
+  <div class="wrap stack" style="gap:48px">
+
+    <div class="mast">
+      <nav aria-label="Primary" class="stack" style="align-items:flex-start">
+        <span class="serif menu-label">Menu</span>
+        <ul class="serif menu-list stack">
+          <li><a class="lnk" href="#work">Selected work</a></li>
+          <li><a class="lnk" href="#history">Experience</a></li>
+          <li><a class="lnk" href="#approach">How I work</a></li>
+          <li><a class="lnk" href="#about">About</a></li>
+        </ul>
+      </nav>
+
+      <h1 class="serif mast-name">Delaney Dixon</h1>
+
+      <div class="mast-right">
+        <a class="serif lnk contact-link" href="#contact">Contact</a>
+        <span class="cap">Columbus, Ohio</span>
+      </div>
+    </div>
+
+    <p class="serif tagline">Rigor for the things the world calls too small.</p>
+
+    <div class="collage">
+
+      <!-- YOUR DRAWING HERE: replace this thread with <img class="thread" src="images/thread.png" alt=""> -->
+      <svg class="thread" aria-hidden="true" focusable="false" viewBox="0 0 1200 760" preserveAspectRatio="none">
+        <g filter="url(#rough)" fill="none" stroke="#2C1320" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke">
+          <path vector-effect="non-scaling-stroke" d="M-30 560 C 90 420, 250 400, 330 480 S 370 660, 250 650 S 170 520, 340 450 S 620 590, 780 430 S 990 300, 1090 410 S 1180 640, 1010 670 S 850 560, 970 470"></path>
+        </g>
+      </svg>
+
+      <article class="paper note">
+        <span class="serif note-hi">Hi,</span>
+        <p class="serif note-body">I turn messy enterprise problems into better ways of working, and increasingly into better products, operating models and AI-enabled solutions.</p>
+        <span class="cap" style="margin-top:10px">Vice President, Business Operations Manager at JPMorgan Chase</span>
+      </article>
+
+      <figure class="pola" style="margin:0">
+        <!-- YOUR PHOTO HERE: replace the .slot div with <img src="images/me.jpg" alt="Delaney Dixon" style="display:block;width:100%;aspect-ratio:1/1;object-fit:cover"> -->
+        <div class="cap slot" style="aspect-ratio:1/1;background:var(--peach)">[Photo of you]</div>
+      </figure>
+
+      <!-- YOUR DRAWING HERE: replace this flower with <img class="flower" src="images/flower.png" alt=""> -->
+      <svg class="flower" aria-hidden="true" focusable="false" viewBox="0 0 300 300">
+        <g filter="url(#rough)" stroke="#2C1320" stroke-width="9">
+          <circle cx="235" cy="150" r="58" fill="#F7A072"></circle>
+          <circle cx="192" cy="224" r="58" fill="#B5E2FA"></circle>
+          <circle cx="108" cy="224" r="58" fill="#F7A072"></circle>
+          <circle cx="65" cy="150" r="58" fill="#B5E2FA"></circle>
+          <circle cx="108" cy="76" r="58" fill="#F7A072"></circle>
+          <circle cx="192" cy="76" r="58" fill="#B5E2FA"></circle>
+          <circle cx="150" cy="150" r="44" fill="#F8F991"></circle>
+        </g>
+      </svg>
+
+      <p class="anno cap cap-chip cap-photo"><span class="ph">[Caption for your photo]</span></p>
+      <p class="anno cap cap-chip cap-years"><span>6+ years in process management and business transformation</span></p>
+      <p class="anno cap cap-chip cap-rigor"><span class="ph">[A small thing you gave full rigor to]</span></p>
+    </div>
+
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- SELECTED WORK -->
+  <section id="work" class="section" aria-labelledby="work-h">
+    <div class="wrap stack" style="gap:56px">
+
+      <div class="head">
+        <h2 id="work-h" class="serif h2">Selected work</h2>
+        <p class="serif lede">Three mechanisms I built to make an operating environment easier to see, use and trust.</p>
+      </div>
+
+      <div class="posters">
+
+        <article class="work">
+          <div class="poster" style="background:var(--peach);transform:rotate(-2deg)">
+            <!-- YOUR IMAGE HERE: replace this svg with <img src="images/work-ai-inventory.png" alt="..."> and remove the label -->
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 300 300">
+              <g filter="url(#rough)" fill="none" stroke="#2C1320" stroke-width="16" stroke-linecap="round">
+                <path d="M150 30 L150 270"></path><path d="M30 150 L270 150"></path><path d="M65 65 L235 235"></path><path d="M235 65 L65 235"></path>
+              </g>
+            </svg>
+            <span class="cap">[Case study image]</span>
+          </div>
+          <div class="work-body">
+            <p class="anno cap">JPMorgan Chase, Ops 2.0, <span class="ph">[Year]</span></p>
+            <h3 class="serif work-title">Ops 2.0 AI inventory and operating model</h3>
+            <p class="work-text">Identified and organized AI use cases across Operations, then structured an operating model around them so the organization could see where AI applies. Alongside it, I own the Build side of AI for Ops 2.0: internal AI tools and agentic workflows.</p>
+            <p class="work-outcome"><span class="ph">[Outcome, with a real number if you can share one]</span></p>
+            <!-- TODO: point href at the case study page once it exists -->
+            <a class="serif work-link" href="#work">Read the case study</a>
+          </div>
+        </article>
+
+        <article class="work">
+          <div class="poster" style="background:var(--sky);transform:rotate(1.6deg)">
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 300 300">
+              <g filter="url(#rough)" stroke="#2C1320" stroke-width="9">
+                <circle cx="235" cy="150" r="52" fill="#FDFCCB"></circle>
+                <circle cx="192" cy="224" r="52" fill="#F7A072"></circle>
+                <circle cx="108" cy="224" r="52" fill="#FDFCCB"></circle>
+                <circle cx="65" cy="150" r="52" fill="#F7A072"></circle>
+                <circle cx="108" cy="76" r="52" fill="#FDFCCB"></circle>
+                <circle cx="192" cy="76" r="52" fill="#F7A072"></circle>
+                <circle cx="150" cy="150" r="40" fill="#8FB398"></circle>
+              </g>
+            </svg>
+            <span class="cap">[Case study image]</span>
+          </div>
+          <div class="work-body">
+            <p class="anno cap">JPMorgan Chase, Ops 2.0, <span class="ph">[Year]</span></p>
+            <h3 class="serif work-title">A self-service data hub for analysts and managers</h3>
+            <p class="work-text">Built an internal Confluence page tree so Business Analysts and managers can answer basic data questions without waiting on a person. Tested it with a working group, folded in their feedback, informed Controls stakeholders and launched it to the team.</p>
+            <p class="work-outcome"><span class="ph">[Outcome, with a real number if you can share one]</span></p>
+            <a class="serif work-link" href="#work">Read the case study</a>
+          </div>
+        </article>
+
+        <article class="work">
+          <div class="poster" style="background:var(--sage);transform:rotate(-1deg)">
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 300 300">
+              <g filter="url(#rough)" fill="none" stroke="#2C1320" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 190 C 60 60, 140 60, 150 150 S 110 250, 80 200 S 140 80, 220 110 S 290 200, 250 250"></path>
+              </g>
+            </svg>
+            <span class="cap">[Case study image]</span>
+          </div>
+          <div class="work-body">
+            <p class="anno cap">JPMorgan Chase, Ops 2.0, 2026</p>
+            <h3 class="serif work-title">An Operations red team for a net-new product launch</h3>
+            <p class="work-text">Own the Operations red team: pressure-testing assumptions and surfacing risks, dependencies and failure modes before implementation. Built a recurring showcase-session mechanism and a self-service hub so the wider organization can follow findings and status.</p>
+            <p class="work-outcome"><span class="ph">[Outcome you are able to share publicly]</span></p>
+            <a class="serif work-link" href="#work">Read the case study</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="history" class="section" aria-labelledby="history-h">
+    <div class="wrap stack" style="gap:56px">
+
+      <h2 id="history-h" class="serif h2">Where I've worked</h2>
+
+      <div class="xp">
+
+        <article class="paper sheet">
+
+          <div class="role">
+            <p class="cap">September 2024 to present</p>
+            <h3 class="serif role-org">JPMorgan Chase</h3>
+            <p class="serif role-title">Vice President, Business Operations Manager</p>
+            <p class="cap">Ops 2.0 modernization, CCB Operations</p>
+            <ul>
+              <li>Lead cross-functional transformation initiatives across Operations, Product and Technology, owning scope, stakeholders, risks, dependencies and delivery.</li>
+              <li>Diagnose ambiguous operational problems, map current states, and design future-state processes and operating models.</li>
+              <li>Translate business needs into product requirements and recommendations with Product and Technology partners. Build business cases and own performance against KPIs.</li>
+              <li>Own the Build side of AI for Ops 2.0, creating internal AI tools and agentic workflows. Built the Ops 2.0 AI inventory and operating model.</li>
+              <li>Own the Operations red team for a major net-new product launch, pressure-testing assumptions and surfacing risks before implementation.</li>
+              <li>Manage direct reports and coach team members toward expanded leadership responsibilities.</li>
+            </ul>
+          </div>
+
+          <div class="role">
+            <p class="anno cap">January 2023 to September 2024</p>
+            <h4 class="serif role-sub">Business Analyst II, JPMorgan Chase</h4>
+            <p>Led discovery and process analysis for Ops 2.0 across CCB Operations. Mapped current-state processes and journeys, designed future states, built business cases and stayed involved through implementation.</p>
+          </div>
+
+          <div class="role">
+            <p class="anno cap">February 2020 to October 2022</p>
+            <h4 class="serif role-sub">Analyst, Process Management, Nationwide Realty Investors</h4>
+            <p>Designed and re-engineered business and system processes across a city-wide real estate portfolio. Built KPI dashboards and managed an award-winning annual survey program.</p>
+          </div>
+
+          <div class="role">
+            <p class="anno cap">October 2022 to January 2023</p>
+            <h4 class="serif role-sub">Accountant, Nationwide Realty Investors</h4>
+            <p>Joined the core team behind a newly launched invoice-processing system, driving process improvements while managing daily cash allocation and cross-unit delinquency reviews.</p>
+          </div>
+
+        </article>
+
+        <div class="aside">
+
+          <div class="stat">
+            <div class="stat-art">
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 260 150">
+                <g filter="url(#rough)">
+                  <ellipse cx="135" cy="78" rx="100" ry="52" fill="#F7A072" transform="rotate(-6 135 78)"></ellipse>
+                  <path d="M30 85 C 18 28, 205 8, 238 58 C 262 104, 165 142, 92 136 C 30 130, 6 92, 42 52 C 72 26, 140 18, 192 30" fill="none" stroke="#2C1320" stroke-width="7" stroke-linecap="round"></path>
+                </g>
+              </svg>
+              <span class="serif stat-num">20</span>
+            </div>
+            <p class="anno cap">Months from Business Analyst to Vice President</p>
+          </div>
+
+          <div class="stat">
+            <div class="stat-art">
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 260 150">
+                <g filter="url(#rough)">
+                  <ellipse cx="130" cy="76" rx="98" ry="54" fill="#B5E2FA" transform="rotate(5 130 76)"></ellipse>
+                  <path d="M36 90 C 14 36, 190 6, 232 54 C 266 100, 170 144, 96 138 C 30 132, 8 96, 38 54 C 66 24, 146 14, 196 34" fill="none" stroke="#2C1320" stroke-width="7" stroke-linecap="round"></path>
+                </g>
+              </svg>
+              <span class="serif stat-num">6+</span>
+            </div>
+            <p class="anno cap">Years in process management and business transformation</p>
+          </div>
+
+          <div class="stat">
+            <div class="stat-art">
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 260 150">
+                <g filter="url(#rough)">
+                  <ellipse cx="132" cy="76" rx="100" ry="52" fill="#8FB398" transform="rotate(-4 132 76)"></ellipse>
+                  <path d="M28 80 C 22 24, 200 10, 240 60 C 258 106, 160 138, 90 134 C 28 128, 10 90, 44 50 C 76 22, 138 20, 188 32" fill="none" stroke="#2C1320" stroke-width="7" stroke-linecap="round"></path>
+                </g>
+              </svg>
+              <span class="serif stat-num">2</span>
+            </div>
+            <p class="anno cap">Years co-leading the Ops 2.0 Culture Council. Several events became funded annual traditions</p>
+          </div>
+
+          <div>
+            <h3 class="serif study-h">Study and training</h3>
+            <ul class="study">
+              <li class="anno"><div><div class="serif study-name">Organizational Design for Digital Transformation, 2026</div><div class="cap">MIT Sloan Executive Education</div></div></li>
+              <li class="anno"><div><div class="serif study-name">Design Thinking Certificate, 2024</div><div class="cap">eCornell</div></div></li>
+              <li class="anno"><div><div class="serif study-name">FinTech Certificate, 2024</div><div class="cap">Harvard Online</div></div></li>
+              <li class="anno"><div><div class="serif study-name">B.A. Global Studies, 2018</div><div class="cap">Ohio University</div></div></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW I WORK -->
+  <section id="approach" class="section" aria-labelledby="approach-h">
+    <div class="wrap stack" style="gap:56px">
+
+      <div class="head">
+        <h2 id="approach-h" class="serif h2">How I work</h2>
+        <p class="serif lede">Something is unclear, broken or not mature enough. I work through it the same way each time.</p>
+      </div>
+
+      <div class="how">
+        <div class="how-art">
+          <!-- YOUR DRAWING HERE: replace with <img src="images/flower-large.png" alt="" style="width:100%;height:auto"> -->
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 400 400">
+            <g filter="url(#rough)" stroke="#2C1320" stroke-width="11">
+              <circle cx="312" cy="200" r="76" fill="#8FB398"></circle>
+              <circle cx="256" cy="297" r="76" fill="#F7A072"></circle>
+              <circle cx="144" cy="297" r="76" fill="#B5E2FA"></circle>
+              <circle cx="88" cy="200" r="76" fill="#8FB398"></circle>
+              <circle cx="144" cy="103" r="76" fill="#F7A072"></circle>
+              <circle cx="256" cy="103" r="76" fill="#B5E2FA"></circle>
+              <circle cx="200" cy="200" r="58" fill="#F8F991"></circle>
+            </g>
+          </svg>
+        </div>
+
+        <ol class="how-list" style="list-style:none;margin:0;padding:0">
+          <li class="anno"><div><div class="serif how-verb">Diagnose</div><div class="cap">Figure out what is actually wrong, and why</div></div></li>
+          <li class="anno"><div><div class="serif how-verb">Frame</div><div class="cap">Turn an ambiguous problem into a structured problem statement</div></div></li>
+          <li class="anno"><div><div class="serif how-verb">Design</div><div class="cap">Develop future-state processes, operating models, requirements or solution options</div></div></li>
+          <li class="anno"><div><div class="serif how-verb">Align</div><div class="cap">Bring Business, Operations, Product and Technology to the same page</div></div></li>
+          <li class="anno"><div><div class="serif how-verb">Translate</div><div class="cap">Turn business needs into requirements, recommendations and actionable work</div></div></li>
+          <li class="anno"><div><div class="serif how-verb">Drive</div><div class="cap">Own scope, stakeholders, risks, dependencies and delivery</div></div></li>
+          <li class="anno"><div><div class="serif how-verb">Measure</div><div class="cap">Use KPIs, business cases and performance data to show what changed</div></div></li>
+          <li class="anno"><div><div class="serif how-verb">Improve</div><div class="cap">Iterate on feedback and what implementation teaches</div></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section" aria-labelledby="about-h">
+    <div class="wrap stack" style="gap:56px">
+
+      <h2 id="about-h" class="serif h2">About</h2>
+
+      <div class="about">
+        <figure class="pola" style="margin:0">
+          <!-- YOUR PHOTO HERE: replace the .slot div with an <img src="images/about.jpg" alt="..."> -->
+          <div class="cap slot" style="aspect-ratio:4/5;background:var(--sage)">[Photo of you at work]</div>
+        </figure>
+
+        <div class="about-copy">
+          <p class="serif about-lead">I'm a hands-on business transformation leader with 6+ years across process management, operating-model design, strategic initiatives, product and technology partnership, and applied AI.</p>
+          <p class="body">I started in process management at Nationwide Realty Investors, joined JPMorgan Chase in 2023, and moved from Business Analyst to Vice President inside the Ops 2.0 modernization effort. I like being the person who diagnoses the problem, designs the fix and stays through implementation.</p>
+          <p class="body"><span class="ph">[One sentence about what you want to do next]</span></p>
+
+          <ul class="facts">
+            <li class="anno cap"><span><strong style="font-weight:600">Based in</strong> Columbus, Ohio</span></li>
+            <li class="anno cap"><span><strong style="font-weight:600">Focus</strong> Business transformation, operating models, applied AI</span></li>
+            <li class="anno cap"><span><strong style="font-weight:600">Tools</strong> Excel, Tableau, Jira, Confluence, Lucid, Figma, Claude, Microsoft Copilot</span></li>
+            <li class="anno cap"><span><strong style="font-weight:600">Outside work</strong> <span class="ph">[Something you make or collect]</span></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section" aria-labelledby="contact-h" style="padding-bottom:40px">
+    <div class="wrap stack" style="gap:56px">
+
+      <h2 id="contact-h" class="serif contact-h">Let's talk about <span class="ph">[what you want to work on]</span>.</h2>
+
+      <ul class="contact-list">
+        <li class="anno"><div>
+          <div class="serif contact-label">Write to me</div>
+          <!-- TODO: put your real address in both places -->
+          <a class="cap contact-val" href="mailto:you@example.com"><span class="ph">[you@example.com]</span></a>
+        </div></li>
+        <li class="anno"><div>
+          <div class="serif contact-label">Find me on LinkedIn</div>
+          <a class="cap contact-val" href="https://www.linkedin.com/in/your-profile"><span class="ph">[Profile URL]</span></a>
+        </div></li>
+        <li class="anno"><div>
+          <div class="serif contact-label">See more</div>
+          <a class="cap contact-val" href="#"><span class="ph">[Another link]</span></a>
+        </div></li>
+      </ul>
+
+      <!-- YOUR DRAWING HERE: replace this band with <img src="images/thread-band.png" alt="" style="display:block;width:100%;height:auto"> -->
+      <div class="thread-band" aria-hidden="true">
+        <svg focusable="false" viewBox="0 0 1200 140" preserveAspectRatio="none">
+          <g filter="url(#rough)" fill="none" stroke="#2C1320" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+            <path vector-effect="non-scaling-stroke" d="M-30 100 C 120 20, 260 30, 300 90 S 420 150, 520 80 S 640 10, 760 70 S 900 140, 1000 70 S 1130 10, 1240 60"></path>
+          </g>
+        </svg>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot cap">
+    <span>© 2026 Delaney Dixon</span>
+    <a class="lnk" href="#top">Back to top</a>
+  </div>
+</footer>
+
+</body>
+</html>
